@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import logo from '../../../assets/logo.svg';
 
 const Header = () => {
+
     const menuItems = <>
-        <li><Link to="/home">Home</Link></li>
+        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/login'>Login</Link></li>
     </>
+
     return (
-        <div className="navbar mb-16 bg-base-100">
+        <div className="navbar h-20 mb-12 pt-12 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -17,7 +20,9 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a href='/' className="btn btn-ghost normal-case text-xl"><img src={logo} alt="logo" /></a>
+                <Link to="/" className="btn btn-ghost normal-case text-xl">
+                    <img src={logo} alt="" />
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -25,7 +30,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a href='/'><button className="btn btn-outline btn-warning">Get Started</button></a>
+            <button className="btn btn-outline btn-warning">Appointment</button>
             </div>
         </div>
     );
